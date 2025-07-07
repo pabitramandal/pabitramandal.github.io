@@ -6,6 +6,7 @@
     --text-color: #333;
     --light-bg: #f5f6fa;
     --white: #ffffff;
+    --link-color: #2980b9;
 }
 
 /* Reset and base styles */
@@ -22,11 +23,21 @@ body {
     background-color: var(--light-bg);
 }
 
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
 /* Header styles */
 header {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
 }
 
@@ -43,6 +54,22 @@ header {
 .profile-subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
 }
 
 /* Navigation styles */
@@ -60,6 +87,7 @@ nav ul {
     justify-content: center;
     list-style: none;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -67,6 +95,7 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
+    padding: 0.5rem 1rem;
 }
 
 nav a:hover {
@@ -92,33 +121,81 @@ h2 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
-}
-
-/* Publications styles */
-.publication {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #eee;
-}
-
-.publication:last-child {
-    border-bottom: none;
-}
-
-.publication-title {
-    color: var(--secondary-color);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
 }
 
 /* Education styles */
 .education-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.education-item:last-child {
+    border-bottom: none;
 }
 
 .education-year {
     color: var(--accent-color);
     font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Skills styles */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Achievement styles */
+.achievement-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.achievement-item:last-child {
+    border-bottom: none;
+}
+
+.achievement-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Conference styles */
+.conference-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.conference-item:last-child {
+    border-bottom: none;
+}
+
+.conference-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
 /* Contact styles */
@@ -165,5 +242,9 @@ h2 {
 
     section {
         padding: 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
