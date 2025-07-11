@@ -3,160 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pabitra Mandal - Academic Portfolio</title>
+    <title>Pabitra Mandal - Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="profile-container">
-            <h1 class="profile-title">Pabitra Mandal</h1>
-            <p class="profile-subtitle">PhD Student in Computer Science and Engineering</p>
-            <div class="social-links">
-                <a href="mailto:pabitramandal00@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/mpabitra/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/pabitramandal/"><i class="fab fa-github"></i></a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">PM</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#conferences">Conferences</a></li>
-        </ul>
     </nav>
 
-    <main>
-        <section id="research">
-            <h2>Research Interest</h2>
-            <p>My primary research interest is to enhance the privacy and efficiency in distributed systems using Multi-Party Computation. I am also keen on exploring areas such as:</p>
-            <ul>
-                <li>Threshold Cryptography</li>
-                <li>Zero-Knowledge Proofs</li>
-                <li>Fully-Homomorphic Encryption</li>
-                <li>Lattice-Based Cryptography</li>
-            </ul>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <p class="education-year">2024 - Present</p>
-                <h3>PhD in Computer Science and Engineering</h3>
-                <p><a href="https://www.iisc.ac.in/" target="_blank">Indian Institute of Science</a>, Bengaluru, IN</p>
-                <p>Advisor: Prof. Arpita Patra</p>
-            </div>
-            <div class="education-item">
-                <p class="education-year">2022 - 2024</p>
-                <h3>M.Tech in Cryptology and Security</h3>
-                <p><a href="https://www.isical.ac.in" target="_blank">Indian Statistical Institute</a>, Kolkata, IN</p>
-                <p>Percentage: 76.15</p>
-            </div>
-            <div class="education-item">
-                <p class="education-year">2020 - 2024</p>
-                <h3>M.Sc in Mathematics</h3>
-                <p><a href="https://www.presiuniv.ac.in" target="_blank">Presidency University</a>, Kolkata, IN</p>
-                <p>CGPA: 7.75</p>
-            </div>
-            <div class="education-item">
-                <p class="education-year">2017 - 2020</p>
-                <h3>B.Sc in Mathematics</h3>
-                <p><a href="https://www.jkcprl.ac.in/" target="_blank">Jagannath Kishore College</a>, Purulia, IN</p>
-                <p>CGPA: 8.77</p>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="education-item">
-                <p class="education-year">Jan 2024 - June 2024</p>
-                <h3>Research Intern</h3>
-                <p>WESEE, Ministry of Defence, Govt. of India, New Delhi, IN</p>
-                <ul>
-                    <li><strong>Masters Dissertation:</strong> Key Rotation using Updatable Encryption</li>
-                    <li>Worked on some confidential projects</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <p>C/C++, Python, SageMath, Rust</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Pabitra Mandal</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <!-- We'll customize this based on your profession -->
+                    Passionate Developer & Problem Solver
+                </p>
+                <p class="hero-description">
+                    <!-- We'll customize this based on your description -->
+                    Building innovative solutions and creating meaningful digital experiences.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="PABITRA_CV.pdf" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
-                <div class="skill-category">
-                    <h3>Web Development</h3>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-placeholder">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        <!-- We'll customize this based on your information -->
+                        Welcome to my personal space on the web! I'm passionate about technology and 
+                        always eager to learn new things and take on exciting challenges.
+                    </p>
+                    <p>
+                        I believe in the power of clean code, innovative solutions, and continuous learning. 
+                        When I'm not coding, you can find me exploring new technologies or working on 
+                        personal projects.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>2+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>Technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <!-- We'll customize these based on your skills -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>Frontend</h3>
                     <p>HTML, CSS, JavaScript</p>
                 </div>
-                <div class="skill-category">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <p>Node.js, Python</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database</h3>
+                    <p>MySQL, MongoDB</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
                     <h3>Tools</h3>
-                    <p>LaTeX</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Operating Systems</h3>
-                    <p>Linux, Windows</p>
+                    <p>Git, VS Code</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="achievements">
-            <h2>Achievements</h2>
-            <div class="achievement-item">
-                <h3>Joint CSIR-UGC NET (JRF) in Mathematics</h3>
-                <p>June 2022</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>your.email@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/yourprofile</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>GitHub</h3>
+                            <p>github.com/pabitramandal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send me a message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
             </div>
-            <div class="achievement-item">
-                <h3>GATE in Mathematics</h3>
-                <p>2022</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="conferences">
-            <h2>Conferences/Workshops Attended</h2>
-            <div class="conference-item">
-                <h3>TPMPC 2025</h3>
-                <p>IISc Bengaluru</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Pabitra Mandal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             </div>
-            <div class="conference-item">
-                <h3>Asiacrypt 2024</h3>
-                <p>TCG CREST, Kolkata</p>
-            </div>
-            <div class="conference-item">
-                <h3>Indocrypt 2023</h3>
-                <p>BITS Pilani, Goa</p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p><a href="mailto:pabitramandal00@gmail.com">pabitramandal00@gmail.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Purulia, West Bengal - 723126, India</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <p><a href="https://www.linkedin.com/in/mpabitra/">LinkedIn Profile</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <p><a href="https://github.com/pabitramandal/">GitHub Profile</a></p>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
