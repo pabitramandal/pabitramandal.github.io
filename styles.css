@@ -21,6 +21,15 @@ a:hover {
     text-decoration: none;
 }
 
+/* Make specific links appear in the same color as regular text */
+.same-color-link {
+    color: inherit !important;
+}
+
+.same-color-link:hover {
+    color: inherit !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
