@@ -129,10 +129,6 @@ Modify `styles.css` to customize:
 - **Department**: Computer Science and Automation
 - **Lab**: [Cryptography and Information Security (CrIS)](https://cris.csa.iisc.ac.in/)
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🤝 Contributing
 
 While this is a personal portfolio, suggestions and improvements are welcome! Feel free to:
@@ -140,14 +136,6 @@ While this is a personal portfolio, suggestions and improvements are welcome! Fe
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
-
-## 🙏 Acknowledgments
-
-- **Supervisor**: Prof. Arpita Patra
-- **Institution**: Indian Institute of Science (IISc), Bangalore
-- **Lab**: Cryptography and Information Security (CrIS) Lab
-- **Fonts**: Google Fonts (Inter)
-- **Icons**: Font Awesome
 
 ---
 
