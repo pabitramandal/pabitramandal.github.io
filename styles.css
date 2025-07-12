@@ -12,6 +12,15 @@ body {
     overflow-x: hidden;
 }
 
+/* Remove underlines from all links */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
