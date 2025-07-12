@@ -39,6 +39,7 @@ pabitramandal.github.io/
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS styles and responsive design
 ├── script.js           # JavaScript functionality
+├── favicon.svg         # Website favicon (PM logo)
 ├── Pabitra.jpg         # Profile photo
 ├── PABITRA_CV.pdf      # Downloadable CV
 └── README.md           # Project documentation
