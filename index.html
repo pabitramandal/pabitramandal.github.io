@@ -3,48 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pabitra Mandal </title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    
+    <meta name="description" content="Pabitra Mandal - PhD Student in Computer Science at Indian Institute of Science, specializing in cryptography, security, and privacy-preserving technologies.">
+    <meta name="keywords" content="Pabitra Mandal, PhD Student, Computer Science, Cryptography, Security, Privacy, IISc, Research">
+    <meta name="author" content="Pabitra Mandal">
+    <meta property="og:title" content="Pabitra Mandal - PhD Student in Computer Science">
+    <meta property="og:description" content="PhD Student at Indian Institute of Science, specializing in cryptography, security, and privacy-preserving technologies.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <title>Pabitra Mandal</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">PM</a>
+                <img src="PM.jpg" alt="Pabitra Mandal profile picture" class="nav-profile-pic" loading="lazy">
+                <span>Pabitra Mandal</span>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#education" class="nav-link">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#research" class="nav-link">Research</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#publications" class="nav-link">Publications</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
+            <div class="nav-menu" id="nav-menu" role="menu">
+                <a href="#home" class="nav-link active" role="menuitem">Home</a>
+                <a href="#experience" class="nav-link" role="menuitem">Experience</a>
+                <a href="#education" class="nav-link" role="menuitem">Education</a>
+                <a href="#research" class="nav-link" role="menuitem">Research</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -56,56 +42,73 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Pabitra Mandal</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Research Scholar at IISc Bangalore | Cryptography & Information Security
-                </p>
-                <p class="hero-description">
-                    Passionate about advancing the frontiers of cryptography through innovative research in Secure Multi-Party Computation, Zero-Knowledge Proofs, and Fully Homomorphic Encryption.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="PABITRA_CV.pdf" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Download CV
-                    </a>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Pabitra Mandal</span>
+                    </h1>
+                    <h2 class="hero-subtitle">PhD Student in Computer Science</h2>
+                    <p class="hero-description">
+                        I am a PhD student at the CrIS Lab in the Department of Computer Science and Automation 
+                        at the Indian Institute of Science, working under the supervision of Prof. Arpita Patra. 
+                        My research interests lie in the intersection of cryptography, security, and privacy-preserving technologies.
+                        With a strong background in mathematics and cryptology, I am dedicated to advancing the field 
+                        through innovative research and practical applications.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="PABITRA_CV.pdf" target="_blank" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/pabitramandal" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mpabitra/" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:pabitram@iisc.ac.in" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="PM.jpg" alt="Pabitra Mandal" class="profile-image" loading="eager">
+                        <div class="image-border"></div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="Pabitra.jpg" alt="Pabitra Mandal" class="hero-profile-photo">
+        </div>
+        <div class="hero-bg">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Welcome to my academic journey! I am a research scholar in the Department of Computer Science and Automation at the Indian Institute of Science (IISc), Bangalore, working under the supervision of Prof. Arpita Patra in the Cryptography and Information Security (CrIS) lab.
-                    </p>
-                    <p>
-                        My research focuses on the fascinating world of cryptography, with particular emphasis on Secure Multi-Party Computation (MPC). I am also deeply interested in exploring Zero-Knowledge Proofs (ZKP) and Fully Homomorphic Encryption (FHE). Prior to my doctoral studies, I completed my M.Tech in Cryptology and Security from the Indian Statistical Institute, Kolkata, where I explored proxy re-encryption and updatable encryption.
-                    </p>
-                    <p>
-                        I am passionate about advancing the theoretical foundations of cryptography while also considering their practical applications in building secure and privacy-preserving systems.
-                    </p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>1+</h3>
-                        <p>Years in Research</p>
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="experience-content">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-info">
+                            <h3>Research Intern</h3>
+                            <h4>WESEE, Ministry of Defence, Govt. of India</h4>
+                            <div class="experience-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                New Delhi, India
+                            </div>
+                        </div>
+                        <div class="experience-date">Jan 2024 - June 2024</div>
                     </div>
-                    <div class="stat">
-                        <h3>4</h3>
-                        <p>Degrees Completed</p>
-                    </div>
-                    <div class="stat">
-                        <h3>5+</h3>
-                        <p>Research Areas</p>
+                    <div class="experience-description">
                     </div>
                 </div>
             </div>
@@ -115,42 +118,40 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+            </div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Ph.D. in Computer Science and Engineering</h3>
-                        <h4><a href="https://www.iisc.ac.in/" target="_blank">Indian Institute of Science (IISc), Bengaluru</a></h4>
-                        <p><strong>Department:</strong> Computer Science and Automation</p>
-                        <p><strong>Supervisor:</strong> Prof. Arpita Patra</p>
-                        <p><strong>Lab:</strong> <a href="https://cris.csa.iisc.ac.in/" target="_blank" class="same-color-link">Cryptography and Information Security Lab (CrIS)</a></p>
-                        <p><strong>Research Area:</strong> Secure Multi-Party Computation (MPC)</p>
+                        <div class="timeline-date">Aug 2024 - Present</div>
+                        <h3>PhD in Computer Science and Engineering</h3>
+                        <h4>Indian Institute of Science, Bangalore</h4>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2022 - 2024</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <div class="timeline-date">Aug 2022 - July 2024</div>
                         <h3>M.Tech in Cryptology and Security</h3>
-                        <h4><a href="https://www.isical.ac.in/" target="_blank">Indian Statistical Institute (ISI), Kolkata</a></h4>
-                        <p><strong>Research Areas:</strong> Proxy Re-encryption, Updatable Encryption</p>
-                        <p><strong>Coursework:</strong> Advanced Cryptography, Network Security, Mathematical Foundations</p>
+                        <h4>Indian Statistical Institute, Kolkata</h4>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2020 - 2022</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>M.Sc. in Mathematics</h3>
-                        <h4><a href="https://www.presiuniv.ac.in/web/" target="_blank">Presidency University, Kolkata</a></h4>
-                        <p><strong>Focus:</strong> Advanced mathematical foundations for cryptographic research</p>
+                        <div class="timeline-date">Nov 2020 - Aug 2022</div>
+                        <h3>M.Sc in Mathematics</h3>
+                        <h4>Presidency University, Kolkata</h4>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2017 - 2020</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>B.Sc. in Mathematics</h3>
-                        <h4><a href="https://www.jkcprl.ac.in/" target="_blank">Jagannath Kishore College, Purulia</a></h4>
-                        <p><strong>Foundation:</strong> Mathematical principles and analytical thinking</p>
+                        <div class="timeline-date">July 2017 - Oct 2020</div>
+                        <h3>B.Sc in Mathematics</h3>
+                        <h4>Jagannath Kishore College, Purulia</h4>
                     </div>
                 </div>
             </div>
@@ -160,98 +161,51 @@
     <!-- Research Section -->
     <section id="research" class="research">
         <div class="container">
-            <h2 class="section-title">Research Interests</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Secure Multi-Party Computation</h3>
-                    <p>Developing efficient protocols for privacy-preserving computation among multiple parties without revealing individual inputs.</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-user-secret"></i>
-                    </div>
-                    <h3>Zero-Knowledge Proofs</h3>
-                    <p>Exploring novel ZK constructions and their applications in blockchain, privacy-preserving authentication, and verifiable computation.</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Fully Homomorphic Encryption</h3>
-                    <p>Investigating practical FHE schemes for enabling computation on encrypted data while maintaining strong security guarantees.</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <h3>Proxy Re-encryption</h3>
-                    <p>Advanced study of proxy re-encryption schemes and their applications in secure data sharing and cloud computing.</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Updatable Encryption</h3>
-                    <p>Research on encryption schemes that allow for secure key rotation without requiring complete re-encryption of data.</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Applied Cryptography</h3>
-                    <p>Bridging theoretical cryptography with practical applications in distributed systems and privacy-preserving technologies.</p>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Research Interests</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications-content">
-                <p class="publications-note">
-                    <i class="fas fa-info-circle"></i>
-                    Publications will be updated as research progresses. Currently focusing on ongoing research projects in secure multi-party computation and zero-knowledge proofs.
-                </p>
-                <div class="publication-categories">
-                    <div class="category">
-                        <h3><i class="fas fa-file-alt"></i> Conference Papers</h3>
-                        <p>Research papers under preparation for submission to top-tier cryptography conferences.</p>
+            <div class="research-content">
+                <div class="research-grid">
+                    <div class="research-item">
+                        <div class="research-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="research-info">
+                            <h3>Multi-Party Computation</h3>
+                            <p>Enabling multiple parties to jointly compute functions over their inputs while keeping those inputs private</p>
+                        </div>
                     </div>
-                    <div class="category">
-                        <h3><i class="fas fa-graduation-cap"></i> Thesis Work</h3>
-                        <p><strong>M.Tech Thesis:</strong> Advanced studies in proxy re-encryption and updatable encryption schemes.</p>
+                    <div class="research-item">
+                        <div class="research-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="research-info">
+                            <h3>Zero Knowledge Proof</h3>
+                            <p>Proving knowledge of a secret without revealing the secret itself, ensuring privacy in verification</p>
+                        </div>
                     </div>
-                    <div class="category">
-                        <h3><i class="fas fa-code-branch"></i> Ongoing Research</h3>
-                        <p>Active research in secure multi-party computation protocols with focus on efficiency and practical applications.</p>
+                    <div class="research-item">
+                        <div class="research-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="research-info">
+                            <h3>Fully Homomorphic Encryption</h3>
+                            <p>Performing computations on encrypted data without decrypting it, preserving privacy throughout processing</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Jan 2024 - June 2024</div>
-                    <div class="timeline-content">
-                        <h3>Research Intern</h3>
-                        <h4>Weapons and Electronics Systems Engineering Establishment (WESEE)</h4>
-                        <ul>
-                            <li>Completed M.Tech dissertation research project</li>
-                            <li>Worked on confidential projects in advanced technology research</li>
-                            <li>Applied cryptographic techniques to real-world security challenges</li>
-                            <li>Collaborated with defense research scientists and engineers</li>
-                        </ul>
-                    </div>
+            
+            <!-- Publications Subsection -->
+            <div class="publications-section">
+                <div class="section-header">
+                    <h2 class="section-title">Publications</h2>
+                </div>
+                <div class="publications-content">
+                    <p class="publications-note">
+                        <i class="fas fa-info-circle"></i>
+                        Publications will be updated as research progresses. Currently focusing on ongoing research projects in secure multi-party computation.
+                    </p>
                 </div>
             </div>
         </div>
@@ -260,7 +214,9 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -278,7 +234,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/mpabitra/" target="_blank">linkedin.com/in/mpabitra</a></p>
+                            <p><a href="https://www.linkedin.com/in/mpabitra/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mpabitra</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -287,21 +243,24 @@
                         </div>
                         <div class="contact-text">
                             <h3>GitHub</h3>
-                            <p><a href="https://github.com/pabitramandal" target="_blank">github.com/pabitramandal</a></p>
+                            <p><a href="https://github.com/pabitramandal" target="_blank" rel="noopener noreferrer">github.com/pabitramandal</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <h3>Send me a message</h3>
-                    <form id="contactForm">
+                    <form id="contactForm" role="form">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email" class="sr-only">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <label for="message" class="sr-only">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -315,9 +274,9 @@
         <div class="container">
             <p>&copy; 2025 Pabitra Mandal. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/mpabitra/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/mpabitra/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:pabitram@iisc.ac.in" class="social-link"><i class="fas fa-envelope"></i></a>
-                <a href="#" class="social-link"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://github.com/pabitramandal" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </footer>
