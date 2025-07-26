@@ -841,6 +841,8 @@ section {
     font-family: 'Inter', sans-serif;
     appearance: none;
     min-height: 44px;
+    color: #333333;
+    caret-color: #333333;
 }
 
 .form-group input:focus,
@@ -849,39 +851,97 @@ section {
     border-color: #6366f1;
     background: white;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    color: #333333;
+    caret-color: #333333;
 }
 
-/* Autofill Styling - Light Mode - Match normal input appearance */
+/* Autofill Styling - Light Mode - Match normal input appearance exactly */
 .form-group input:-webkit-autofill,
 .form-group input:-webkit-autofill:hover,
-.form-group input:-webkit-autofill:focus {
+.form-group textarea:-webkit-autofill,
+.form-group textarea:-webkit-autofill:hover {
     -webkit-box-shadow: 0 0 0 1000px #f9fafb inset !important;
-    -webkit-text-fill-color: #1f2937 !important;
+    -webkit-text-fill-color: #333333 !important;
     border: 2px solid #e5e7eb !important;
-    transition: background-color 5000s ease-in-out 0s !important;
+    background-color: #f9fafb !important;
+    color: #333333 !important;
+    caret-color: #333333 !important;
+    transition: all 0.3s ease !important;
 }
 
-/* Autofill Styling - Dark Mode - Match normal input appearance */
+.form-group input:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px white inset, 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+    -webkit-text-fill-color: #333333 !important;
+    border: 2px solid #6366f1 !important;
+    background-color: white !important;
+    color: #333333 !important;
+    caret-color: #333333 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Autofill Styling - Dark Mode - Match normal input appearance exactly */
 [data-theme="dark"] .form-group input:-webkit-autofill,
 [data-theme="dark"] .form-group input:-webkit-autofill:hover,
-[data-theme="dark"] .form-group input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 1000px #171717 inset !important;
+[data-theme="dark"] .form-group textarea:-webkit-autofill,
+[data-theme="dark"] .form-group textarea:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 1000px #262626 inset !important;
     -webkit-text-fill-color: #e4e4e7 !important;
     border: 2px solid #404040 !important;
-    background: #171717 !important;
+    background-color: #262626 !important;
+    color: #e4e4e7 !important;
+    caret-color: #e4e4e7 !important;
+    transition: all 0.3s ease !important;
 }
 
-/* Firefox Autofill Support - Match normal input appearance */
-.form-group input:-moz-autofill {
+[data-theme="dark"] .form-group input:-webkit-autofill:focus,
+[data-theme="dark"] .form-group textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #262626 inset, 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+    -webkit-text-fill-color: #e4e4e7 !important;
+    border: 2px solid #3b82f6 !important;
+    background-color: #262626 !important;
+    color: #e4e4e7 !important;
+    caret-color: #e4e4e7 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Firefox Autofill Support - Match normal input appearance exactly */
+.form-group input:-moz-autofill,
+.form-group textarea:-moz-autofill {
     background-color: #f9fafb !important;
-    color: #1f2937 !important;
+    color: #333333 !important;
     border: 2px solid #e5e7eb !important;
+    caret-color: #333333 !important;
+    transition: all 0.3s ease !important;
 }
 
-[data-theme="dark"] .form-group input:-moz-autofill {
-    background-color: #171717 !important;
+.form-group input:-moz-autofill:focus,
+.form-group textarea:-moz-autofill:focus {
+    background-color: white !important;
+    color: #333333 !important;
+    border: 2px solid #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+    caret-color: #333333 !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .form-group input:-moz-autofill,
+[data-theme="dark"] .form-group textarea:-moz-autofill {
+    background-color: #262626 !important;
     color: #e4e4e7 !important;
     border: 2px solid #404040 !important;
+    caret-color: #e4e4e7 !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .form-group input:-moz-autofill:focus,
+[data-theme="dark"] .form-group textarea:-moz-autofill:focus {
+    background-color: #262626 !important;
+    color: #e4e4e7 !important;
+    border: 2px solid #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+    caret-color: #e4e4e7 !important;
+    transition: all 0.3s ease !important;
 }
 
 .form-group textarea {
@@ -2035,15 +2095,18 @@ section {
 
 [data-theme="dark"] .form-group input,
 [data-theme="dark"] .form-group textarea {
-    background: var(--accent-color) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-color) !important;
+    background: #262626 !important;
+    border-color: #404040 !important;
+    color: #e4e4e7 !important;
+    caret-color: #e4e4e7 !important;
 }
 
 [data-theme="dark"] .form-group input:focus,
 [data-theme="dark"] .form-group textarea:focus {
-    border-color: var(--primary-color) !important;
-    background: var(--card-bg) !important;
+    border-color: #3b82f6 !important;
+    background: #262626 !important;
+    color: #e4e4e7 !important;
+    caret-color: #e4e4e7 !important;
 }
 
 [data-theme="dark"] .contact-form .btn {
