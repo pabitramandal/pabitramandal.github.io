@@ -7,10 +7,8 @@
 
 html {
     scroll-behavior: smooth;
-    /* Improve scrolling performance on mobile */
     -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -19,7 +17,6 @@ body {
     color: #333;
     background-color: #ffffff;
     overflow-x: hidden;
-    /* Improve performance */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -163,7 +160,6 @@ body {
 
 .hero-text {
     color: white;
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,7 +171,6 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
-    text-align: left;
 }
 
 .gradient-text {
@@ -190,7 +185,6 @@ body {
     font-weight: 400;
     margin-bottom: 1.5rem;
     opacity: 0.9;
-    text-align: left;
 }
 
 .hero-description {
@@ -219,12 +213,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    /* Better touch targets */
     min-height: 44px;
     min-width: 44px;
-    /* Improve touch responsiveness */
     touch-action: manipulation;
-    -webkit-user-select: none;
     user-select: none;
     border: none;
     cursor: pointer;
@@ -811,18 +802,12 @@ section {
     padding: 15px 20px;
     border: 2px solid #e5e7eb;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: max(16px, 1rem);
     transition: all 0.3s ease;
     background: #f9fafb;
     font-family: 'Inter', sans-serif;
-    /* Better mobile experience */
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
-    /* Improve touch targets */
     min-height: 44px;
-    /* Prevent zoom on iOS */
-    font-size: max(16px, 1rem);
 }
 
 .form-group input:focus,
@@ -1259,15 +1244,6 @@ section {
     }
 }
 
-/* High DPI screens */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .profile-image,
-    .nav-profile-pic {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
-}
-
 /* Landscape orientation on mobile */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero {
@@ -1295,10 +1271,6 @@ section {
     
     .hero {
         background: white;
-        color: black;
-    }
-    
-    .section-title {
         color: black;
     }
 }

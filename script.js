@@ -23,8 +23,7 @@ navToggle.addEventListener('click', () => {
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        const bars = navToggle.querySelectorAll('.bar');
-        bars.forEach(bar => {
+        navToggle.querySelectorAll('.bar').forEach(bar => {
             bar.style.transform = 'none';
             bar.style.opacity = '1';
         });
