@@ -2082,8 +2082,32 @@ section {
     color: var(--text-color) !important;
 }
 
-[data-theme="dark"] .modal-close:hover {
-    background: rgba(0, 0, 0, 0.5) !important;
+/* Dark mode scroll-to-top button */
+[data-theme="dark"] .scroll-to-top {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+}
+
+[data-theme="dark"] .scroll-to-top:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+    transform: translateY(-3px);
+}
+
+/* Dark mode footer social media buttons */
+[data-theme="dark"] .footer-right .social-link {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(59, 130, 246, 0.2) !important;
+}
+
+[data-theme="dark"] .footer-right .social-link:hover {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+    transform: translateY(-2px);
 }
 
 /* Smooth transitions for theme switching */
