@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages with Auto Date Update
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Update last modified date
+      run: |
+        # Get current date in format: Month DD, YYYY (matching your existing format)
+        CURRENT_DATE=$(date '+%B %d, %Y')
+        echo "Current date: $CURRENT_DATE"
+        
+        # Update the date in index.html - match your exact format
+        sed -i "s/Last updated: [A-Za-z]* [0-9]*, [0-9]*/Last updated: $CURRENT_DATE/" index.html
+        
+        # Show what was changed
+        echo "Updated index.html with current date"
+        grep -A1 -B1 "Last updated:" index.html || echo "Pattern not found"
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
