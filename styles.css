@@ -1000,6 +1000,194 @@ section {
     background-color: rgba(34, 197, 94, 0.1);
 }
 
+/* Success Modal Popup Styles */
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.success-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.success-modal.show .modal-content {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.success-header {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.success-header i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounceIn 0.6s ease-out 0.3s both;
+}
+
+.success-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    animation: slideInUp 0.5s ease-out 0.5s both;
+}
+
+.success-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.success-body p {
+    color: #374151;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.success-body p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.success-actions {
+    margin-top: 1.5rem;
+}
+
+.success-actions .btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.success-actions .btn:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Modal Animations */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive for Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    .success-header {
+        padding: 1.5rem;
+    }
+    
+    .success-header i {
+        font-size: 2.5rem;
+    }
+    
+    .success-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .success-body {
+        padding: 1.5rem;
+    }
+    
+    .success-body p {
+        font-size: 0.95rem;
+    }
+}
+
 /* Footer */
 .footer {
     background: linear-gradient(135deg, #1f2937 0%, #374151 100%);

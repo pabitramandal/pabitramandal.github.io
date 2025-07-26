@@ -310,34 +310,67 @@ function showMessage(message, type) {
 }
 
 function showSuccessMessage(name, email, message) {
-    // Remove existing messages
+    // Remove existing messages/modals
     const existingMsg = document.querySelector('.form-message');
+    const existingModal = document.querySelector('.success-modal');
     if (existingMsg) existingMsg.remove();
+    if (existingModal) existingModal.remove();
     
-    // Create success message
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'form-message form-message-success';
-    messageDiv.innerHTML = `
-        <div class="success-content">
+    // Create modal popup
+    const modalDiv = document.createElement('div');
+    modalDiv.className = 'success-modal';
+    modalDiv.innerHTML = `
+        <div class="modal-overlay" onclick="closeSuccessModal()"></div>
+        <div class="modal-content">
             <div class="success-header">
                 <i class="fas fa-check-circle"></i>
-                <h4>Thank you for your message, ${name}!</h4>
+                <h3>Message Sent Successfully!</h3>
             </div>
-            <p>Your message has been successfully submitted via Google Forms. I will get back to you soon!</p>
-            <div class="contact-summary">
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong> ${message}</p>
+            <div class="success-body">
+                <p>Thank you for reaching out, <strong>${name}</strong>!</p>
+                <p>Your message has been successfully submitted. I will get back to you as soon as possible at <strong>${email}</strong>.</p>
+                <div class="success-actions">
+                    <button onclick="closeSuccessModal()" class="btn btn-primary">
+                        <i class="fas fa-check"></i> Got it!
+                    </button>
+                </div>
             </div>
-            <button onclick="this.parentElement.parentElement.remove()" class="close-btn">
+            <button onclick="closeSuccessModal()" class="modal-close">
                 <i class="fas fa-times"></i>
             </button>
         </div>
     `;
     
-    // Insert before form
-    contactForm.parentNode.insertBefore(messageDiv, contactForm);
+    // Add to body
+    document.body.appendChild(modalDiv);
+    
+    // Show modal with animation
+    setTimeout(() => {
+        modalDiv.classList.add('show');
+    }, 10);
+    
+    // Add keyboard support
+    document.addEventListener('keydown', handleModalKeydown);
     
     // Reset form
     contactForm.reset();
+}
+
+// Function to close success modal
+function closeSuccessModal() {
+    const modal = document.querySelector('.success-modal');
+    if (modal) {
+        modal.classList.remove('show');
+        document.removeEventListener('keydown', handleModalKeydown);
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+}
+
+// Handle keyboard events for modal
+function handleModalKeydown(e) {
+    if (e.key === 'Escape') {
+        closeSuccessModal();
+    }
 }
