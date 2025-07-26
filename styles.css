@@ -851,6 +851,39 @@ section {
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
+/* Autofill Styling - Light Mode - Match normal input appearance */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #f9fafb inset !important;
+    -webkit-text-fill-color: #1f2937 !important;
+    border: 2px solid #e5e7eb !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Autofill Styling - Dark Mode - Match normal input appearance */
+[data-theme="dark"] .form-group input:-webkit-autofill,
+[data-theme="dark"] .form-group input:-webkit-autofill:hover,
+[data-theme="dark"] .form-group input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #171717 inset !important;
+    -webkit-text-fill-color: #e4e4e7 !important;
+    border: 2px solid #404040 !important;
+    background: #171717 !important;
+}
+
+/* Firefox Autofill Support - Match normal input appearance */
+.form-group input:-moz-autofill {
+    background-color: #f9fafb !important;
+    color: #1f2937 !important;
+    border: 2px solid #e5e7eb !important;
+}
+
+[data-theme="dark"] .form-group input:-moz-autofill {
+    background-color: #171717 !important;
+    color: #e4e4e7 !important;
+    border: 2px solid #404040 !important;
+}
+
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
