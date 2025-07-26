@@ -335,9 +335,6 @@ function showSuccessMessage(name, email, message) {
                     </button>
                 </div>
             </div>
-            <button onclick="closeSuccessModal()" class="modal-close">
-                <i class="fas fa-times"></i>
-            </button>
         </div>
     `;
     
