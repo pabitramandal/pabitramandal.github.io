@@ -86,13 +86,14 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
+    padding: 0 clamp(15px, 3vw, 40px);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     align-items: center;
-    height: 70px;
+    height: clamp(45px, 6vh, 60px);
+    gap: clamp(1rem, 3vw, 2rem);
 }
 
 .nav-logo {
@@ -102,8 +103,8 @@ body {
 }
 
 .nav-profile-pic {
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 5vw, 45px);
+    height: clamp(35px, 5vw, 45px);
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--primary-color);
@@ -116,22 +117,27 @@ body {
 }
 
 .nav-logo span {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
     font-weight: 700;
     color: var(--primary-color);
 }
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    align-items: center;
+    justify-self: end;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
     transition: color 0.3s ease;
     position: relative;
+    padding: 0.5rem;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -157,13 +163,14 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    justify-self: end;
 }
 
 .bar {
-    width: 25px;
-    height: 3px;
+    width: clamp(20px, 4vw, 28px);
+    height: clamp(2px, 0.5vw, 3px);
     background: var(--text-color);
-    margin: 3px 0;
+    margin: clamp(2px, 0.5vw, 4px) 0;
     transition: 0.3s;
 }
 
@@ -1333,23 +1340,25 @@ section {
 .footer {
     background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
     color: white;
-    padding: 2rem 0 1.5rem;
+    padding: 1.2rem 0 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 clamp(15px, 3vw, 40px);
 }
 
 /* Enhanced Footer */
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(1rem, 3vw, 2rem);
     min-height: 50px;
+    text-align: center;
+    padding-right: 80px; /* Space for scroll-to-top button */
 }
 
 .footer-left {
@@ -1371,7 +1380,7 @@ section {
 }
 
 .footer-update {
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
     opacity: 0.8;
     margin: 0;
     color: #d1d5db;
@@ -1380,29 +1389,32 @@ section {
 
 .footer-center p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
     font-weight: 500;
     color: #f9fafb;
 }
 
 .footer-right .social-links {
     display: flex;
-    gap: 1rem;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
     align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .footer-right .social-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 5vw, 45px);
+    height: clamp(35px, 5vw, 45px);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 .footer-right .social-link:hover {
@@ -1519,16 +1531,17 @@ section {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: clamp(60px, 8vh, 80px);
         flex-direction: column;
         background-color: var(--card-bg);
         width: 100%;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px var(--card-shadow);
-        padding: 2rem 0;
+        padding: clamp(1.5rem, 4vw, 2.5rem) 0;
         z-index: 999;
         border-top: 1px solid var(--border-color);
+        gap: clamp(1rem, 3vw, 1.5rem);
     }
 
     .nav-menu.active {
@@ -1536,7 +1549,7 @@ section {
     }
 
     .nav-controls {
-        gap: 0.5rem;
+        gap: clamp(0.3rem, 1.5vw, 0.8rem);
     }
 
     .theme-toggle {
@@ -1773,7 +1786,7 @@ section {
     }
     
     .nav-logo span {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .nav-profile-pic {
@@ -1867,6 +1880,7 @@ section {
         text-align: center;
         gap: 1.2rem;
         justify-items: center;
+        padding-right: 0; /* Remove padding on mobile */
     }
     
     .footer-left,
@@ -1899,6 +1913,7 @@ section {
     
     .footer-content {
         gap: 1rem;
+        padding-right: 0; /* Remove padding on small mobile */
     }
     
     .footer-update {
@@ -1920,22 +1935,22 @@ section {
 .nav-controls {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
 }
 
 .theme-toggle {
     background: none;
     border: 2px solid var(--border-color);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 5vw, 45px);
+    height: clamp(35px, 5vw, 45px);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-color);
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 .theme-toggle:hover {
