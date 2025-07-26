@@ -262,20 +262,36 @@ function submitToGoogleForms(name, email, message) {
     // Your Google Form submission URL
     const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc00FW5yynKMgP-9demvJv7_qptc0W-VRJTP1be0fxr49ADhw/formResponse';
     
+    // Debug: Log submission details
+    console.log('Submitting to Google Forms:', {
+        url: GOOGLE_FORM_URL,
+        name: name,
+        email: email,
+        message: message,
+        fieldIds: {
+            name: 'entry.1026314088',
+            email: 'entry.145181332', 
+            message: 'entry.1690537029'
+        }
+    });
+    
     // Form data with correct field IDs from your Google Form
     const formData = new FormData();
     formData.append('entry.1026314088', name);    // Name field
-    formData.append('entry.1451813134', email);   // Email field  
+    formData.append('entry.145181332', email);   // Email field  
     formData.append('entry.1690537029', message); // Message field
     
-    // Submit to Google Forms
+    // Submit to Google Forms with better error handling
     fetch(GOOGLE_FORM_URL, {
         method: 'POST',
         body: formData,
         mode: 'no-cors'
-    }).then(() => {
+    }).then((response) => {
+        console.log('Form submission response:', response);
+        // Due to no-cors mode, we can't read the response, but if we get here, submission likely worked
         showSuccessMessage(name, email, message);
-    }).catch(() => {
+    }).catch((error) => {
+        console.error('Form submission error:', error);
         showMessage('There was an error sending your message. Please try again.', 'error');
     });
 }
