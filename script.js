@@ -1,3 +1,44 @@
+// Page Loading Animation
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('fade-out');
+            setTimeout(() => {
+                loader.remove();
+            }, 500);
+        }, 1000);
+    }
+});
+
+// Scroll Reveal Animations
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    
+    reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('revealed');
+        }
+    });
+}
+
+// Initialize scroll animations
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// Enhanced navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
@@ -206,6 +247,46 @@ document.addEventListener('DOMContentLoaded', () => {
             heroContent.style.transform = 'translateY(0)';
         }, 200);
     }
+});
+
+// Parallax effect for hero background
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.floating-shapes');
+    
+    parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+
+// Add interactive hover effects to timeline items
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const researchItems = document.querySelectorAll('.research-item');
+    const experienceCards = document.querySelectorAll('.experience-card');
+    
+    // Add reveal classes to timeline items
+    timelineItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.2}s`;
+        item.classList.add('reveal');
+    });
+    
+    // Add reveal classes to research items
+    researchItems.forEach((item, index) => {
+        item.classList.add('reveal-scale', `reveal-delay-${(index % 3) + 1}`);
+    });
+    
+    // Add reveal classes to experience cards
+    experienceCards.forEach((item, index) => {
+        item.classList.add('reveal-left', `reveal-delay-${index + 1}`);
+    });
+    
+    // Add staggered animation to contact items
+    const contactItems = document.querySelectorAll('.contact-item');
+    contactItems.forEach((item, index) => {
+        item.classList.add('reveal-right', `reveal-delay-${index + 1}`);
+    });
 });
 
 // Scroll to Top Button
