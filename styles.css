@@ -836,13 +836,16 @@ section {
     border: 2px solid #e5e7eb;
     border-radius: 10px;
     font-size: max(16px, 1rem);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     background: #f9fafb;
     font-family: 'Inter', sans-serif;
     appearance: none;
     min-height: 44px;
     color: #333333;
     caret-color: #333333;
+    /* Force consistent styling that matches autofill */
+    -webkit-box-shadow: 0 0 0 1000px #f9fafb inset;
+    box-shadow: 0 0 0 1000px #f9fafb inset;
 }
 
 .form-group input:focus,
@@ -853,6 +856,8 @@ section {
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     color: #333333;
     caret-color: #333333;
+    /* Force consistent styling that matches autofill focus */
+    -webkit-box-shadow: 0 0 0 1000px white inset, 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 /* Autofill Styling - Light Mode - Match normal input appearance exactly */
@@ -866,8 +871,6 @@ section {
     background-color: #f9fafb !important;
     color: #333333 !important;
     caret-color: #333333 !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .form-group input:-webkit-autofill:focus,
@@ -878,8 +881,6 @@ section {
     background-color: white !important;
     color: #333333 !important;
     caret-color: #333333 !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Autofill Styling - Dark Mode - Match normal input appearance exactly */
@@ -2103,7 +2104,10 @@ section {
     border-color: #404040 !important;
     color: #e4e4e7 !important;
     caret-color: #e4e4e7 !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    /* Force consistent styling that matches autofill */
+    -webkit-box-shadow: 0 0 0 1000px #262626 inset !important;
+    box-shadow: 0 0 0 1000px #262626 inset !important;
 }
 
 [data-theme="dark"] .form-group input:focus,
@@ -2113,7 +2117,8 @@ section {
     color: #e4e4e7 !important;
     caret-color: #e4e4e7 !important;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    /* Force consistent styling that matches autofill focus */
+    -webkit-box-shadow: 0 0 0 1000px #333333 inset, 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
 }
 
 [data-theme="dark"] .contact-form .btn {
