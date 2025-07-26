@@ -262,36 +262,20 @@ function submitToGoogleForms(name, email, message) {
     // Your Google Form submission URL
     const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc00FW5yynKMgP-9demvJv7_qptc0W-VRJTP1be0fxr49ADhw/formResponse';
     
-    // Debug: Log submission details
-    console.log('Submitting to Google Forms:', {
-        url: GOOGLE_FORM_URL,
-        name: name,
-        email: email,
-        message: message,
-        fieldIds: {
-            name: 'entry.1026314088',
-            email: 'entry.145181332', 
-            message: 'entry.1690537029'
-        }
-    });
-    
     // Form data with correct field IDs from your Google Form
     const formData = new FormData();
     formData.append('entry.1026314088', name);    // Name field
     formData.append('entry.145181332', email);   // Email field  
     formData.append('entry.1690537029', message); // Message field
     
-    // Submit to Google Forms with better error handling
+    // Submit to Google Forms
     fetch(GOOGLE_FORM_URL, {
         method: 'POST',
         body: formData,
         mode: 'no-cors'
-    }).then((response) => {
-        console.log('Form submission response:', response);
-        // Due to no-cors mode, we can't read the response, but if we get here, submission likely worked
+    }).then(() => {
         showSuccessMessage(name, email, message);
-    }).catch((error) => {
-        console.error('Form submission error:', error);
+    }).catch(() => {
         showMessage('There was an error sending your message. Please try again.', 'error');
     });
 }
@@ -323,59 +307,6 @@ function showMessage(message, type) {
             if (messageDiv.parentNode) messageDiv.remove();
         }, 5000);
     }
-}
-
-function showFieldIdSetupMessage(name, email, message) {
-    // Remove existing messages
-    const existingMsg = document.querySelector('.form-message');
-    if (existingMsg) existingMsg.remove();
-    
-    // Create setup message with your specific form
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'form-message form-message-info';
-    messageDiv.innerHTML = `
-        <div class="setup-content">
-            <div class="setup-header">
-                <i class="fas fa-tools"></i>
-                <h4>Need Field IDs - Quick Fix!</h4>
-            </div>
-            <p>Hi ${name}! The form submission failed because we need the correct field IDs from your Google Form.</p>
-            
-            <div class="quick-steps">
-                <h4>🚀 Quick Steps (2 minutes):</h4>
-                <ol>
-                    <li><strong>Open your form:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSc00FW5yynKMgP-9demvJv7_qptc0W-VRJTP1be0fxr49ADhw/viewform" target="_blank">Click here</a></li>
-                    <li><strong>Right-click the NAME field</strong> → Select "Inspect"</li>
-                    <li><strong>Look for:</strong> <code>name="entry.XXXXXXX"</code> in the code</li>
-                    <li><strong>Copy the numbers</strong> after "entry." (example: 123456789)</li>
-                    <li><strong>Repeat for EMAIL and MESSAGE fields</strong></li>
-                    <li><strong>Tell me the 3 field IDs</strong> and I'll fix it immediately!</li>
-                </ol>
-            </div>
-            
-            <div class="example-section">
-                <h4>💡 What to look for:</h4>
-                <p>In the inspect window, find lines like:</p>
-                <code>name="entry.123456789"</code> ← Name field ID<br>
-                <code>name="entry.987654321"</code> ← Email field ID<br>
-                <code>name="entry.555666777"</code> ← Message field ID
-            </div>
-            
-            <div class="temp-contact">
-                <p><strong>⚡ For immediate contact:</strong></p>
-                <p><a href="mailto:pabitram@iisc.ac.in?subject=Contact from Website&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}" target="_blank">📧 Send via Email Instead</a></p>
-            </div>
-            <button onclick="this.parentElement.parentElement.remove()" class="close-btn">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    `;
-    
-    // Insert before form
-    contactForm.parentNode.insertBefore(messageDiv, contactForm);
-    
-    // Reset form
-    contactForm.reset();
 }
 
 function showSuccessMessage(name, email, message) {
