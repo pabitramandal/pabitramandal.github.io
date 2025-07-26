@@ -7,65 +7,77 @@ Welcome to my personal portfolio website! This site showcases my academic journe
 
 ## 🧑‍🎓 About Me
 
-I am a Research Scholar in the Department of Computer Science and Automation at the **Indian Institute of Science (IISc), Bangalore**, working under the supervision of Prof. Arpita Patra in the **Cryptography and Information Security (CrIS) lab**.
+I am a **PhD Student** in the Department of Computer Science and Automation at the **Indian Institute of Science (IISc), Bangalore**, working under the supervision of Prof. Arpita Patra in the **Cryptography and Information Security (CrIS) lab**.
 
 My research focuses on:
-- **Secure Multi-Party Computation (MPC)**
-- **Zero-Knowledge Proofs (ZKP)**
+- **Multi-Party Computation (MPC)**
+- **Zero Knowledge Proof (ZKP)**
 - **Fully Homomorphic Encryption (FHE)**
-- **Proxy Re-encryption**
-- **Updatable Encryption**
+- **Security and Privacy-preserving Technologies**
 
 ## 🌐 Website Features
 
-- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Interactive Navigation**: Smooth scrolling and mobile-friendly hamburger menu
-- **Academic Portfolio**: Comprehensive sections covering education, research, and experience
-- **Contact Integration**: Easy ways to get in touch and download CV
+- **Responsive Design**: Fully optimized for all devices and screen resolutions
+- **Modern UI/UX**: Clean, professional design with smooth animations and hover effects
+- **Interactive Navigation**: Smooth scrolling with mobile-friendly hamburger menu
+- **Academic Portfolio**: Comprehensive sections covering education, experience, and research
+- **Contact Integration**: Multiple ways to connect and download CV
+- **SEO Optimized**: Complete meta tags for social media sharing
+- **Accessibility**: Proper ARIA labels and semantic HTML structure
 
 ## 🏗️ Technical Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **Fonts**: Inter (Google Fonts)
+- **Typography**: Inter font family (Google Fonts)
 - **Icons**: Font Awesome 6.0
 - **Hosting**: GitHub Pages
 - **Version Control**: Git & GitHub
+- **Features**: CSS Grid, Flexbox, CSS Custom Properties, Responsive Design
 
 ## 📁 Project Structure
 
 ```
 pabitramandal.github.io/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript functionality
-├── favicon.svg         # Website favicon (PM logo)
-├── Pabitra.jpg         # Profile photo
-├── PABITRA_CV.pdf      # Downloadable CV
+├── index.html          # Main HTML file with all sections
+├── styles.css          # Comprehensive CSS with responsive design
+├── script.js           # JavaScript for interactions and animations
+├── favicon.svg         # Custom SVG favicon
+├── PM.jpg             # Profile photo
+├── PABITRA_CV.pdf      # Latest CV (downloadable)
 └── README.md           # Project documentation
 ```
 
 ## 🔧 Features & Functionality
 
 ### Navigation
-- Responsive navigation bar with smooth scrolling
-- Mobile hamburger menu for smaller screens
+- Responsive navigation bar with profile picture
+- Smooth scrolling to sections
+- Mobile hamburger menu with animations
 - Active section highlighting
-- Sticky navigation with background opacity changes
+- Sticky navigation with transparency effects
 
 ### Sections
-- **Hero Section**: Introduction with profile photo and call-to-action buttons
-- **About**: Personal background and research interests
-- **Education**: Academic timeline with institutions and degrees
-- **Research**: Current and past research projects
-- **Publications**: Academic publications and papers
-- **Experience**: Professional and academic experience
-- **Contact**: Contact information and social links
+- **Hero Section**: Professional introduction with profile photo and action buttons
+- **Experience**: Research internship and professional background
+- **Education**: Complete academic timeline with degrees and institutions
+- **Research Interests**: Focus areas with detailed descriptions
+- **Publications**: Research publications (updated as work progresses)
+- **Contact**: Multiple contact methods and interactive form
+- **Footer**: Organized three-column layout with social links and updates
+
+### Enhanced Features
+- **Scroll-to-top button**: Smooth return to top functionality
+- **Circular buttons**: Modern button design with hover effects
+- **Gradient backgrounds**: Professional visual depth
+- **Form handling**: Contact form with validation
+- **SEO optimization**: Complete Open Graph and Twitter meta tags
+- **Favicon integration**: Custom SVG favicon for branding
 
 ### Responsive Design
-- Mobile-first approach with breakpoints for various screen sizes
-- Optimized layouts for desktop (>1024px), tablet (768px-1024px), and mobile (<768px)
-- Touch-friendly interface for mobile devices
+- **7 breakpoints**: Optimized for all screen sizes (320px to 1200px+)
+- **Mobile-first approach**: Progressive enhancement for larger screens
+- **Touch-friendly**: Appropriate sizing for mobile interactions
+- **Cross-device compatibility**: Consistent experience across all devices
 
 ## 🚀 Getting Started
 
@@ -105,30 +117,55 @@ The website is tested and compatible with:
 
 ## 🎨 Customization
 
-### Colors
-The website uses a modern color palette defined in CSS custom properties. You can easily change the theme by modifying the CSS variables in `styles.css`.
+### Design System
+The website uses a cohesive design system with:
+- **Orange gradient theme**: Consistent branding throughout
+- **Inter font family**: Professional typography
+- **CSS custom properties**: Easy theme customization
+- **25px border-radius**: Circular button design
+- **Backdrop blur effects**: Modern glass-morphism elements
 
-### Content
-Update the content in `index.html` to reflect your own information:
-- Personal details in the hero section
-- Education timeline
-- Research areas and projects
-- Publications and experience
-- Contact information
+### Content Updates
+Update your information in `index.html`:
+- Personal details and professional title
+- Research interests and descriptions
+- Education timeline and institutions
+- Experience and internships
+- Contact information and social links
+- CV file and download links
 
-### Styling
-Modify `styles.css` to customize:
-- Typography and fonts
-- Colors and themes
-- Layout and spacing
-- Animations and transitions
+### Styling Modifications
+Customize the appearance in `styles.css`:
+- Color scheme and gradients
+- Typography and font weights
+- Layout spacing and grid systems
+- Animation timing and effects
+- Responsive breakpoints
 
-## 📧 Contact
+### Performance Optimizations
+- **Optimized assets**: Compressed images and efficient CSS
+- **CDN integration**: Fast loading of external fonts and icons
+- **Semantic HTML**: Proper structure for accessibility and SEO
+- **Modern CSS**: Flexbox and Grid for efficient layouts
 
-- **Email**: [pabitramandal00@gmail.com](mailto:pabitramandal00@gmail.com)
+## 📧 Contact Information
+
+- **Email**: [pabitram@iisc.ac.in](mailto:pabitram@iisc.ac.in)
+- **LinkedIn**: [linkedin.com/in/mpabitra](https://www.linkedin.com/in/mpabitra/)
+- **GitHub**: [github.com/pabitramandal](https://github.com/pabitramandal)
 - **Institution**: Indian Institute of Science (IISc), Bangalore
 - **Department**: Computer Science and Automation
 - **Lab**: [Cryptography and Information Security (CrIS)](https://cris.csa.iisc.ac.in/)
+
+## 🚀 Recent Updates
+
+### July 2025
+- ✅ Organized footer layout with improved structure
+- ✅ Enhanced social media integration with hover effects
+- ✅ Simplified page title for cleaner branding
+- ✅ Added scroll-to-top functionality
+- ✅ Improved SEO with comprehensive meta tags
+- ✅ Enhanced mobile responsiveness across all devices
 
 ## 🤝 Contributing
 
@@ -138,6 +175,13 @@ While this is a personal portfolio, suggestions and improvements are welcome! Fe
 3. Make your changes
 4. Submit a pull request
 
+## 📊 Website Analytics
+
+- **Performance**: Optimized loading times with efficient CSS and JavaScript
+- **Accessibility**: WCAG compliant with proper semantic markup
+- **SEO Score**: Enhanced with comprehensive meta tags and structured data
+- **Mobile Score**: Fully responsive with touch-friendly interactions
+
 ---
 
-*Last updated: July 2025*
+**Last updated: July 26, 2025** | **Version: 2.0** | **Status: Live at [pabitramandal.github.io](https://pabitramandal.github.io)**
