@@ -11,20 +11,20 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="PM.jpg" alt="Pabitra Mandal profile picture" class="nav-profile-pic" loading="lazy">
+                <img src="PM.jpg" alt="Pabitra Mandal profile picture" class="nav-profile-pic">
                 <span>Pabitra Mandal</span>
             </div>
-            <div class="nav-menu" id="nav-menu" role="menu">
-                <a href="#home" class="nav-link active" role="menuitem">Home</a>
-                <a href="#experience" class="nav-link" role="menuitem">Experience</a>
-                <a href="#education" class="nav-link" role="menuitem">Education</a>
-                <a href="#research" class="nav-link" role="menuitem">Research</a>
-                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="image-container">
-                        <img src="PM.jpg" alt="Pabitra Mandal" class="profile-image" loading="eager">
+                        <img src="PM.jpg" alt="Pabitra Mandal" class="profile-image">
                         <div class="image-border"></div>
                     </div>
                 </div>
@@ -241,18 +241,15 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send me a message</h3>
-                    <form id="contactForm" role="form">
+                    <form id="contactForm">
                         <div class="form-group">
-                            <label for="name" class="sr-only">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="sr-only">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message" class="sr-only">Your Message</label>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
