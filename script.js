@@ -208,31 +208,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Add scroll to top functionality
-const scrollToTopBtn = document.createElement('button');
-scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-scrollToTopBtn.className = 'scroll-to-top';
-scrollToTopBtn.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #2563eb;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-`;
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById('scrollToTop');
 
-document.body.appendChild(scrollToTopBtn);
+// Show/hide scroll to top button
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+});
 
+// Scroll to top functionality
 scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
@@ -240,64 +228,169 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        scrollToTopBtn.style.opacity = '1';
-        scrollToTopBtn.style.visibility = 'visible';
-    } else {
-        scrollToTopBtn.style.opacity = '0';
-        scrollToTopBtn.style.visibility = 'hidden';
-    }
-});
-
-// Add hover effects to timeline items
-document.addEventListener('DOMContentLoaded', () => {
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    
-    timelineItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.querySelector('.timeline-dot').style.transform = 'scale(1.5)';
-            item.querySelector('.timeline-dot').style.background = '#1d4ed8';
-        });
+// Contact Form Handler - Google Forms Integration
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        item.addEventListener('mouseleave', () => {
-            item.querySelector('.timeline-dot').style.transform = 'scale(1)';
-            item.querySelector('.timeline-dot').style.background = '#2563eb';
-        });
+        // Get form data
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        // Validation
+        if (!name || !email || !message) {
+            showMessage('Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Submit to Google Forms
+        submitToGoogleForms(name, email, message);
     });
-});
+}
 
-// Contact form functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contactForm');
+function submitToGoogleForms(name, email, message) {
+    // Show loading message
+    showMessage('Sending your message...', 'loading');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
-                return;
-            }
-            
-            // Here you would typically send the form data to a server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
+    // Your Google Form submission URL
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc00FW5yynKMgP-9demvJv7_qptc0W-VRJTP1be0fxr49ADhw/formResponse';
+    
+    // Form data with correct field IDs from your Google Form
+    const formData = new FormData();
+    formData.append('entry.1026314088', name);    // Name field
+    formData.append('entry.1451813134', email);   // Email field  
+    formData.append('entry.1690537029', message); // Message field
+    
+    // Submit to Google Forms
+    fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+    }).then(() => {
+        showSuccessMessage(name, email, message);
+    }).catch(() => {
+        showMessage('There was an error sending your message. Please try again.', 'error');
+    });
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function showMessage(message, type) {
+    // Remove existing messages
+    const existingMsg = document.querySelector('.form-message');
+    if (existingMsg) existingMsg.remove();
+    
+    // Create message element
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `form-message form-message-${type}`;
+    messageDiv.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'loading' ? 'fa-spinner fa-spin' : 'fa-exclamation-triangle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    // Insert before form
+    contactForm.parentNode.insertBefore(messageDiv, contactForm);
+    
+    // Auto remove after 5 seconds (except for loading messages)
+    if (type !== 'loading') {
+        setTimeout(() => {
+            if (messageDiv.parentNode) messageDiv.remove();
+        }, 5000);
     }
-});
+}
+
+function showFieldIdSetupMessage(name, email, message) {
+    // Remove existing messages
+    const existingMsg = document.querySelector('.form-message');
+    if (existingMsg) existingMsg.remove();
+    
+    // Create setup message with your specific form
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'form-message form-message-info';
+    messageDiv.innerHTML = `
+        <div class="setup-content">
+            <div class="setup-header">
+                <i class="fas fa-tools"></i>
+                <h4>Need Field IDs - Quick Fix!</h4>
+            </div>
+            <p>Hi ${name}! The form submission failed because we need the correct field IDs from your Google Form.</p>
+            
+            <div class="quick-steps">
+                <h4>🚀 Quick Steps (2 minutes):</h4>
+                <ol>
+                    <li><strong>Open your form:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSc00FW5yynKMgP-9demvJv7_qptc0W-VRJTP1be0fxr49ADhw/viewform" target="_blank">Click here</a></li>
+                    <li><strong>Right-click the NAME field</strong> → Select "Inspect"</li>
+                    <li><strong>Look for:</strong> <code>name="entry.XXXXXXX"</code> in the code</li>
+                    <li><strong>Copy the numbers</strong> after "entry." (example: 123456789)</li>
+                    <li><strong>Repeat for EMAIL and MESSAGE fields</strong></li>
+                    <li><strong>Tell me the 3 field IDs</strong> and I'll fix it immediately!</li>
+                </ol>
+            </div>
+            
+            <div class="example-section">
+                <h4>💡 What to look for:</h4>
+                <p>In the inspect window, find lines like:</p>
+                <code>name="entry.123456789"</code> ← Name field ID<br>
+                <code>name="entry.987654321"</code> ← Email field ID<br>
+                <code>name="entry.555666777"</code> ← Message field ID
+            </div>
+            
+            <div class="temp-contact">
+                <p><strong>⚡ For immediate contact:</strong></p>
+                <p><a href="mailto:pabitram@iisc.ac.in?subject=Contact from Website&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}" target="_blank">📧 Send via Email Instead</a></p>
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Insert before form
+    contactForm.parentNode.insertBefore(messageDiv, contactForm);
+    
+    // Reset form
+    contactForm.reset();
+}
+
+function showSuccessMessage(name, email, message) {
+    // Remove existing messages
+    const existingMsg = document.querySelector('.form-message');
+    if (existingMsg) existingMsg.remove();
+    
+    // Create success message
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'form-message form-message-success';
+    messageDiv.innerHTML = `
+        <div class="success-content">
+            <div class="success-header">
+                <i class="fas fa-check-circle"></i>
+                <h4>Thank you for your message, ${name}!</h4>
+            </div>
+            <p>Your message has been successfully submitted via Google Forms. I will get back to you soon!</p>
+            <div class="contact-summary">
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Message:</strong> ${message}</p>
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Insert before form
+    contactForm.parentNode.insertBefore(messageDiv, contactForm);
+    
+    // Reset form
+    contactForm.reset();
+}
