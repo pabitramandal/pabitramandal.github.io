@@ -3,6 +3,17 @@
 *.temp
 *~
 
+# Debug and development files
+debug-*.html
+*-debug.*
+test-*.html
+*-test.*
+field-*.html
+form-inspector.*
+get-field-ids.*
+*SETUP*.md
+*GUIDE*.md
+
 # OS generated files
 .DS_Store
 .DS_Store?
