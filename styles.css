@@ -196,6 +196,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 100%;
 }
 
@@ -204,6 +206,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
+    text-align: center;
 }
 
 .gradient-text {
@@ -218,6 +221,7 @@ body {
     font-weight: 400;
     margin-bottom: 1.5rem;
     opacity: 0.9;
+    text-align: center;
 }
 
 .hero-description {
@@ -226,34 +230,37 @@ body {
     opacity: 0.8;
     line-height: 1.7;
     text-align: justify;
-    max-width: 90%;
+    max-width: 100%;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
 .btn {
-    padding: 12px 24px;
+    padding: 15px 40px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 50px;
+    min-width: 200px;
     touch-action: manipulation;
     user-select: none;
     border: none;
     cursor: pointer;
     font-family: inherit;
     font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -283,7 +290,7 @@ body {
 .social-links {
     display: flex;
     gap: 1rem;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -966,6 +973,8 @@ section {
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
+    max-width: 300px;
+    margin: auto;
     margin-top: auto;
 }
 
@@ -1709,6 +1718,11 @@ section {
     
     .contact-form {
         padding: 2rem;
+    }
+    
+    .contact-form .btn {
+        max-width: 250px;
+        margin: 1rem auto 0;
     }
 }
 
