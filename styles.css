@@ -810,6 +810,8 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .contact-info {
