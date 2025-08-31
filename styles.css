@@ -609,6 +609,7 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .education-timeline::before {
@@ -649,6 +650,7 @@ section {
     border-radius: 24px;
     padding: 2.5rem;
     width: 500px;
+    max-width: calc(50% - 5rem); /* Ensure cards don't exceed half width minus icon space */
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(59, 130, 246, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -673,11 +675,11 @@ section {
 }
 
 .education-item:nth-child(odd) .education-card {
-    margin-right: 3rem;
+    margin-right: max(3rem, 5rem);
 }
 
 .education-item:nth-child(even) .education-card {
-    margin-left: 3rem;
+    margin-left: max(3rem, 5rem);
 }
 
 .education-icon {
@@ -747,6 +749,42 @@ section {
 }
 
 /* Education Responsive Styles */
+/* Medium screens - prevent icon overlap */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .education-card {
+        width: 380px;
+        max-width: calc(50% - 6rem);
+    }
+    
+    .education-item:nth-child(odd) .education-card {
+        margin-right: 6rem;
+    }
+    
+    .education-item:nth-child(even) .education-card {
+        margin-left: 6rem;
+    }
+    
+    .education-icon {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+    .education-card {
+        width: 320px;
+        max-width: calc(50% - 6rem);
+    }
+    
+    .education-item:nth-child(odd) .education-card {
+        margin-right: 6rem;
+    }
+    
+    .education-item:nth-child(even) .education-card {
+        margin-left: 6rem;
+    }
+}
+
 @media (max-width: 768px) {
     .education-timeline::before {
         left: 2rem;
