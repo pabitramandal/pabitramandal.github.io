@@ -117,7 +117,7 @@ body {
 }
 
 .nav-logo span {
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: 1.4rem; /* Fixed size - no scaling */
     font-weight: 700;
     color: var(--primary-color);
     white-space: nowrap;
@@ -496,6 +496,19 @@ section {
     border: 1px solid #e5e7eb;
     transition: all 0.3s ease;
     text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .research-item {
+        max-width: 500px;
+    }
+    .research-item {
+        max-width: 500px;
+    }
+    .research-item {
+        max-width: 500px;
+    }
 }
 
 .research-item:hover {
@@ -750,7 +763,7 @@ section {
 
 /* Education Responsive Styles */
 /* Medium screens - prevent icon overlap */
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1024px) and (min-width: 901px) {
     .education-card {
         width: 380px;
         max-width: calc(50% - 6rem);
@@ -767,21 +780,6 @@ section {
     .education-icon {
         width: 65px;
         height: 65px;
-    }
-}
-
-@media (max-width: 900px) and (min-width: 769px) {
-    .education-card {
-        width: 320px;
-        max-width: calc(50% - 6rem);
-    }
-    
-    .education-item:nth-child(odd) .education-card {
-        margin-right: 6rem;
-    }
-    
-    .education-item:nth-child(even) .education-card {
-        margin-left: 6rem;
     }
 }
 
@@ -1216,53 +1214,49 @@ section {
     .experience {
         padding: 4rem 0;
     }
-    
     .experience-timeline {
         padding: 0 1rem;
     }
-    
     .experience-timeline::before {
         left: calc(1rem + 30px - 1.5px);
         width: 3px;
     }
-    
     .experience-item {
         flex-direction: column;
         gap: 1.5rem;
         margin-bottom: 3rem;
     }
-    
     .experience-icon {
         width: 60px;
         height: 60px;
         align-self: flex-start;
         margin-left: 0;
     }
-    
     .experience-icon i {
         font-size: 1.4rem;
     }
-    
+    .experience-card,
     .experience-card.modern {
         margin-left: 0;
         padding: 2rem;
         border-radius: 20px;
+        max-width: 500px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
     }
-    
     .experience-header {
         flex-direction: column;
         gap: 1.5rem;
         align-items: flex-start;
     }
-    
     .experience-title {
         font-size: 1.5rem;
     }
-    
     .experience-company {
         font-size: 1.1rem;
     }
-    
     .experience-date-badge {
         align-self: flex-start;
         padding: 0.8rem 1.2rem;
@@ -1296,45 +1290,42 @@ section {
     .experience-timeline {
         padding: 0 0.5rem;
     }
-    
     .experience-timeline::before {
         left: calc(0.5rem + 25px - 1px);
         width: 2px;
     }
-    
     .experience-icon {
         width: 50px;
         height: 50px;
         margin-left: 0;
     }
-    
     .experience-icon i {
         font-size: 1.2rem;
     }
-    
+    .experience-card,
     .experience-card.modern {
         padding: 1.5rem;
         border-radius: 16px;
+        max-width: 500px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
     }
-    
     .experience-title {
         font-size: 1.3rem;
     }
-    
     .experience-company {
         font-size: 1rem;
     }
-    
     .course-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.8rem;
     }
-    
     .course-card {
         padding: 1.5rem;
     }
-    
     .experience-date-badge {
         padding: 0.6rem 1rem;
         font-size: 0.85rem;
@@ -1349,11 +1340,12 @@ section {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Equal widths always */
     gap: 4rem;
     align-items: stretch;
-    max-width: 1200px;
+    max-width: 1000px; /* Increased for desktop */
     margin: 0 auto;
+    width: 100%;
 }
 
 .contact-info {
@@ -1361,6 +1353,7 @@ section {
     flex-direction: column;
     gap: 1.5rem;
     height: 100%;
+    width: 100%; /* Ensure full width */
 }
 
 .contact-item {
@@ -1373,6 +1366,8 @@ section {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     border: 1px solid rgba(99, 102, 241, 0.1);
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box;
     flex: 1;
 }
 
@@ -1424,8 +1419,10 @@ section {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(99, 102, 241, 0.1);
     height: 100%;
+    width: 100%; /* Ensure full width */
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .contact-form h3 {
@@ -2122,14 +2119,40 @@ section {
     .contact-content {
         gap: 3rem;
     }
+}
+
+/* Intermediate breakpoint for research and contact - keep desktop layout longer */
+@media (max-width: 900px) and (min-width: 769px) {
+    .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
     
-    .timeline-content {
-        padding: 1.8rem;
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .contact-item {
+        text-align: center;
     }
 }
 
-/* Small-Medium screens (576px to 768px) - Large Mobile/Small Tablets */
-@media (max-width: 768px) {
+/* Contact section mobile trigger - bit earlier than other sections */
+@media (max-width: 900px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 500px; /* Reduced for mobile */
+    }
+    
+    .contact-item {
+        text-align: center;
+    }
+}
+
+/* Small-Medium screens (576px to 1000px) - Large Mobile/Small Tablets */
+@media (max-width: 1000px) {
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -2172,6 +2195,24 @@ section {
 
     .hero-text {
         text-align: center;
+        order: 2; /* Move text below image */
+    }
+
+    .hero-image {
+        order: 1; /* Move image above text */
+        margin-bottom: 1rem; /* Add space between image and text */
+    }
+
+    .hero-image .image-container {
+        width: 280px; /* Slightly smaller for mobile */
+        height: 280px;
+        margin: 0 auto; /* Center the image */
+    }
+
+    .hero-image .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .hero-title,
@@ -2239,11 +2280,6 @@ section {
     .experience-date {
         text-align: center;
         margin-top: 0.5rem;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
     }
 
     .section-title {
@@ -2387,10 +2423,6 @@ section {
         padding: 0 15px;
     }
     
-    .nav-logo span {
-        font-size: 1rem;
-    }
-    
     .nav-profile-pic {
         width: 35px;
         height: 35px;
@@ -2492,6 +2524,16 @@ section {
         text-align: center;
     }
     
+    /* Smaller hero image for small mobile screens */
+    .hero-image .image-container {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .hero-content {
+        gap: 1.5rem;
+    }
+    
     .footer-right .social-links {
         justify-content: center;
     }
@@ -2516,6 +2558,20 @@ section {
     .footer-content {
         gap: 1rem;
         padding-right: 0; /* Remove padding on small mobile */
+    }
+    
+    /* Even smaller hero image for very small screens */
+    .hero-image .image-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-content {
+        gap: 1rem;
+    }
+    
+    .hero-image {
+        margin-bottom: 0.5rem;
     }
     
     .footer-update {
