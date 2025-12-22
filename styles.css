@@ -165,10 +165,17 @@ body {
     flex-direction: column;
     cursor: pointer;
     justify-self: end;
-    background: none;
-    border: none;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
     padding: 0.5rem;
     gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background: var(--hover-bg);
+    border-color: var(--primary-color);
 }
 
 .bar {
