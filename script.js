@@ -5,6 +5,10 @@ const navMenu = document.getElementById('nav-menu');
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     
+    // Update ARIA expanded state
+    const isExpanded = navMenu.classList.contains('active');
+    navToggle.setAttribute('aria-expanded', isExpanded);
+    
     // Animate hamburger menu
     const bars = navToggle.querySelectorAll('.bar');
     bars.forEach((bar, index) => {
@@ -23,6 +27,7 @@ navToggle.addEventListener('click', () => {
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
         navToggle.querySelectorAll('.bar').forEach(bar => {
             bar.style.transform = 'none';
             bar.style.opacity = '1';
@@ -293,6 +298,8 @@ function showMessage(message, type) {
     // Create message element
     const messageDiv = document.createElement('div');
     messageDiv.className = `form-message form-message-${type}`;
+    messageDiv.setAttribute('role', 'status');
+    messageDiv.setAttribute('aria-live', 'polite');
     messageDiv.innerHTML = `
         <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'loading' ? 'fa-spinner fa-spin' : 'fa-exclamation-triangle'}"></i>
         <span>${message}</span>
