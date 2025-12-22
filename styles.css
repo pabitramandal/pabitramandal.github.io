@@ -179,7 +179,7 @@ body {
 }
 
 .bar {
-    width: 25px;
+    width: 15px;
     height: 3px;
     background: var(--text-color);
     margin: 0;
