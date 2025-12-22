@@ -166,10 +166,10 @@ body {
     cursor: pointer;
     justify-self: end;
     background: transparent;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.5rem;
-    gap: 5px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.35rem;
+    gap: 4px;
     transition: all 0.3s ease;
 }
 
