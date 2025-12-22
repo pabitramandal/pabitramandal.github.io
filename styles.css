@@ -165,14 +165,19 @@ body {
     flex-direction: column;
     cursor: pointer;
     justify-self: end;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    gap: clamp(3px, 0.6vw, 5px);
 }
 
 .bar {
-    width: clamp(20px, 4vw, 28px);
-    height: clamp(2px, 0.5vw, 3px);
+    width: clamp(22px, 4.5vw, 28px);
+    height: clamp(2.5px, 0.6vw, 3px);
     background: var(--text-color);
-    margin: clamp(2px, 0.5vw, 4px) 0;
-    transition: 0.3s;
+    margin: 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
 /* Hero Section */
