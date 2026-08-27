@@ -3560,7 +3560,8 @@ section {
 [data-theme="dark"] .education-list h2,
 [data-theme="dark"] .education-row span,
 [data-theme="dark"] .research-topics h2,
-[data-theme="dark"] .contact-clean h2 {
+[data-theme="dark"] .contact-clean h2,
+[data-theme="dark"] .activity-list strong {
     color: #f2f1ed;
 }
 
@@ -4115,7 +4116,8 @@ html[data-theme="dark"] body:has(.academic-page) .academic-header h1,
 html[data-theme="dark"] body:has(.academic-page) .academic-intro,
 html[data-theme="dark"] body:has(.academic-page) .research-intro,
 html[data-theme="dark"] body:has(.academic-page) .education-list h2,
-html[data-theme="dark"] body:has(.academic-page) .education-row span {
+html[data-theme="dark"] body:has(.academic-page) .education-row span,
+html[data-theme="dark"] body:has(.academic-page) .activity-list strong {
     color: #e4e4e7 !important;
 }
 
