@@ -7,7 +7,7 @@ Welcome to my personal portfolio website! This site showcases my academic journe
 
 ## 🧑‍🎓 About Me
 
-I am a **PhD Student** in the Department of Computer Science and Automation at the **Indian Institute of Science (IISc), Bangalore**, working under the supervision of Prof. Arpita Patra in the **Cryptography and Information Security (CrIS) lab**.
+I am a **PhD Student** in the Department of Computer Science and Automation at the **Indan Institute of Science**, working under the supervision of Prof. Arpita Patra in the **Cryptography and Information Security (CrIS) lab**.
 
 My research focuses on:
 - **Multi-Party Computation (MPC)**
@@ -156,7 +156,7 @@ Customize the appearance in `styles.css`:
 - **Email**: [pabitram@iisc.ac.in](mailto:pabitram@iisc.ac.in)
 - **LinkedIn**: [linkedin.com/in/mpabitra](https://www.linkedin.com/in/mpabitra/)
 - **GitHub**: [github.com/pabitramandal](https://github.com/pabitramandal)
-- **Institution**: Indian Institute of Science (IISc), Bangalore
+- **Institution**: Indan Institute of Science
 - **Department**: Computer Science and Automation
 - **Lab**: [Cryptography and Information Security (CrIS)](https://cris.csa.iisc.ac.in/)
 
