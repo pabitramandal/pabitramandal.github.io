@@ -13,6 +13,8 @@
     --hover-bg: #f1f5f9;
     --border-color: #e2e8f0;
     --muted-text: #6b7280;
+    --section-accent: #b45309;
+    --section-accent-hover: #92400e;
 }
 
 [data-theme="dark"] {
@@ -29,6 +31,8 @@
     --hover-bg: #374151;
     --border-color: #404040;
     --muted-text: #9ca3af;
+    --section-accent: #fbbf24;
+    --section-accent-hover: #f59e0b;
 }
 
 /* Reset and Base Styles */
@@ -1637,9 +1641,9 @@ section {
 }
 
 .form-message-error {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    color: #991b1b;
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    color: #92400e;
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -1666,7 +1670,7 @@ section {
 }
 
 .form-message-error i {
-    color: #ef4444;
+    color: #d97706;
     font-size: 1.1rem;
 }
 
@@ -3270,7 +3274,7 @@ section {
     display: inline-block;
     margin: 0;
     padding-bottom: 0.45rem;
-    border-bottom: 3px solid #6464f2;
+    border-bottom: 3px solid var(--section-accent);
     color: #171b27;
     font-size: 2rem;
     font-weight: 400;
@@ -3302,7 +3306,7 @@ section {
 .education-list h2,
 .activity-list strong {
     margin: 0;
-    color: #1b2130;
+    color: #0645d8;
     font-size: 1rem;
     font-weight: 700;
 }
@@ -3372,7 +3376,7 @@ section {
     margin-top: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #d9dbe4;
-    color: #c43d3d;
+    color: var(--section-accent);
 }
 
 .paper {
@@ -3465,7 +3469,7 @@ section {
 
 .activity-heading {
     margin-top: 1rem;
-    color: #0645d8;
+    color: var(--section-accent);
 }
 
 .activity-list {
@@ -3489,7 +3493,7 @@ section {
 
 .contact-clean h2 {
     margin-top: 0;
-    color: #c43d3d;
+    color: var(--section-accent);
 }
 
 .contact-clean p {
@@ -3531,7 +3535,7 @@ section {
 
 .contact-clean input:focus,
 .contact-clean textarea:focus {
-    outline: 2px solid #6464f2;
+    outline: 2px solid var(--section-accent);
     outline-offset: 1px;
 }
 
@@ -3539,16 +3543,16 @@ section {
     align-self: flex-start;
     margin-top: 1rem;
     padding: 0.65rem 1.25rem;
-    border: 1px solid #6464f2;
+    border: 1px solid var(--section-accent);
     border-radius: 3px;
-    background: #6464f2;
+    background: var(--section-accent);
     color: #ffffff;
     cursor: pointer;
     font: 0.95rem Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .clean-submit:hover {
-    background: #4c4cd0;
+    background: var(--section-accent-hover);
 }
 
 [data-theme="dark"] .academic-page {
@@ -3560,8 +3564,7 @@ section {
 [data-theme="dark"] .education-list h2,
 [data-theme="dark"] .education-row span,
 [data-theme="dark"] .research-topics h2,
-[data-theme="dark"] .contact-clean h2,
-[data-theme="dark"] .activity-list strong {
+[data-theme="dark"] .contact-clean h2 {
     color: #f2f1ed;
 }
 
@@ -3647,7 +3650,7 @@ section {
     margin: 1.5rem 0 0.75rem;
     padding-bottom: 0.65rem;
     border-bottom: 1px solid #d9dbe4;
-    color: #d04343;
+    color: var(--section-accent);
     font-size: 1.05rem;
     font-weight: 400;
 }
@@ -3758,60 +3761,6 @@ body:has(.academic-page) {
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-body:has(.academic-page) .navbar {
-    height: 52px;
-    background: #879495;
-    border: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-}
-
-body:has(.academic-page) .nav-container {
-    height: 52px;
-    padding: 0 28px;
-}
-
-body:has(.academic-page) .nav-logo span,
-body:has(.academic-page) .nav-link {
-    color: #ffffff !important;
-    font-family: Georgia, 'Times New Roman', serif;
-}
-
-body:has(.academic-page) .nav-logo span {
-    font-size: 1.15rem;
-}
-
-body:has(.academic-page) .nav-profile-pic {
-    display: none;
-}
-
-body:has(.academic-page) .nav-link {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 400;
-}
-
-body:has(.academic-page) .nav-link::after {
-    display: none;
-}
-
-body:has(.academic-page) .nav-link:hover,
-body:has(.academic-page) .nav-link.active {
-    color: #f5d28b !important;
-}
-
-body:has(.academic-page) .theme-toggle {
-    width: 30px;
-    height: 30px;
-    border: 0;
-    color: #ffffff;
-}
-
-body:has(.academic-page) .theme-toggle:hover {
-    background: transparent;
-    color: #f5d28b;
-}
-
 body:has(.academic-page) .academic-page,
 body:has(.academic-page) .research-reference-page {
     min-height: calc(100vh - 52px);
@@ -3885,7 +3834,7 @@ body:has(.academic-page) .activity-heading,
 body:has(.academic-page) .contact-clean h2,
 body:has(.academic-page) .subheading,
 body:has(.academic-page) .research-label {
-    color: #c43d3d !important;
+    color: #2563eb !important;
 }
 
 body:has(.academic-page) .contact-clean input,
@@ -4116,9 +4065,12 @@ html[data-theme="dark"] body:has(.academic-page) .academic-header h1,
 html[data-theme="dark"] body:has(.academic-page) .academic-intro,
 html[data-theme="dark"] body:has(.academic-page) .research-intro,
 html[data-theme="dark"] body:has(.academic-page) .education-list h2,
-html[data-theme="dark"] body:has(.academic-page) .education-row span,
-html[data-theme="dark"] body:has(.academic-page) .activity-list strong {
+html[data-theme="dark"] body:has(.academic-page) .education-row span {
     color: #e4e4e7 !important;
+}
+
+html[data-theme="dark"] body:has(.academic-page) .activity-list strong {
+    color: #60a5fa !important;
 }
 
 html[data-theme="dark"] body:has(.academic-page) .education-list article {
@@ -4160,7 +4112,7 @@ html[data-theme="dark"] body:has(.academic-page) .activity-heading,
 html[data-theme="dark"] body:has(.academic-page) .contact-clean h2,
 html[data-theme="dark"] body:has(.academic-page) .subheading,
 html[data-theme="dark"] body:has(.academic-page) .research-label {
-    color: #f87171 !important;
+    color: #60a5fa !important;
 }
 
 html[data-theme="dark"] body:has(.academic-page) .contact-clean input,
@@ -4299,4 +4251,151 @@ html[data-theme="dark"] body:has(.academic-page) .contact-clean textarea {
 *::before,
 *::after {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Keep section accents distinct from blue navigation and links. */
+body:has(.academic-page) .academic-header h1 {
+    border-bottom-color: #6464f2 !important;
+}
+
+body:has(.academic-page) .activity-heading,
+body:has(.academic-page) .contact-clean h2,
+body:has(.academic-page) .subheading,
+body:has(.academic-page) .research-label {
+    color: var(--section-accent) !important;
+}
+
+body:has(.academic-page) .contact-clean input:focus,
+body:has(.academic-page) .contact-clean textarea:focus {
+    outline-color: var(--section-accent);
+}
+
+body:has(.academic-page) .clean-submit {
+    border-color: var(--section-accent);
+    background: var(--section-accent);
+}
+
+body:has(.academic-page) .clean-submit:hover {
+    background: var(--section-accent-hover);
+}
+
+body:has(.academic-page) .conference-meta i {
+    color: var(--section-accent);
+}
+
+html[data-theme="dark"] body:has(.academic-page) .activity-heading,
+html[data-theme="dark"] body:has(.academic-page) .contact-clean h2,
+html[data-theme="dark"] body:has(.academic-page) .subheading,
+html[data-theme="dark"] body:has(.academic-page) .research-label {
+    color: var(--section-accent) !important;
+}
+
+/* Conference archive */
+.conference-intro {
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.conference-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.conference-list::before {
+    display: none;
+}
+
+.conference-list li {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 0;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid #e2e4ef;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(31, 35, 61, 0.05);
+}
+
+.conference-list li::before {
+    display: none;
+}
+
+.conference-list li:hover {
+    border-color: #aaaaf8;
+    box-shadow: 0 12px 28px rgba(31, 35, 61, 0.1);
+    transform: translateY(-2px);
+}
+
+.conference-details h2 {
+    margin: 0;
+    color: #20243a;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.conference-details h2 a {
+    color: inherit;
+}
+
+.conference-meta {
+    display: grid;
+    grid-template-columns: 10.5rem minmax(0, 1fr);
+    gap: 0.5rem 1.25rem;
+    margin-top: 0.7rem;
+    color: #626779;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.conference-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.conference-meta i {
+    color: var(--section-accent);
+    font-size: 0.78rem;
+}
+
+[data-theme="dark"] .conference-list li {
+    border-color: #3b3d47;
+    background: #282a31;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+[data-theme="dark"] .conference-details h2 {
+    color: #f2f1ed;
+}
+
+[data-theme="dark"] .conference-meta {
+    color: #c2c2bd;
+}
+
+@media (max-width: 700px) {
+    .conference-list {
+        gap: 0.85rem;
+        padding: 0;
+    }
+
+    .conference-list li {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        padding: 1.1rem;
+    }
+
+    .conference-meta {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+    }
+
 }
